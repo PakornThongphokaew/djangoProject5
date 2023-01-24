@@ -1,0 +1,47 @@
+{% load static %}
+<html>
+<head>
+    <title>Digital Business Technology Program</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-4.6.2-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fontawesome-free-5.15.4-desktop/css/all.css' %}">
+    <script src="{% static 'bootstrap-4.6.2-dist/js/bootstrap.js' %}"></script>
+</head>
+<body>
+<div class="container-fluid">
+    {% block sidebar %}
+        <nav class="navbar-nav nav-justified navbar-expand-lg fixed-top "
+             style="background-color: orangered">
+            <div class="col-lg-3">
+                <h3>
+                    <a href="{% url 'home' %}" class="navbar-brand ">
+                        <img src="{% static 'images/logo.png' %}" alt="logo"
+
+                             style="width:75px;">
+
+                    </a>
+                    DBT.
+                </h3>
+            </div>
+            <div class="col-lg-9 align-self-lg-center">
+                <h4 style="color: gainsboro;background-color: orangered">
+                    We Focus on Digital Economics Development for Your
+
+                    Business
+                </h4>
+            </div>
+        </nav>
+    {% endblock %}
+    <div class="row">
+        <div class="col-lg-3" style="background-color: darkorange;
+color: white">
+            {% include 'menu.html' %}
+        </div>
+        <div class="col-lg-9">
+            <br><br><br>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html></html>
